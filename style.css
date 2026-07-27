@@ -609,4 +609,50 @@ height:220px;
 
 
 }
+/* =========================
+   DIFERENCIAIS - CARDS IGUAIS
+========================= */
+
+
+#diferenciais .cards {
+
+    align-items: stretch;
+
+}
+
+
+
+#diferenciais .card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-height: 220px;
+
+}
+
+
+
+#diferenciais .card h3 {
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+#diferenciais .card p {
+
+    margin-top: 15px;
+
+}
 }
