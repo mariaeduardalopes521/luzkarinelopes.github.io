@@ -436,5 +436,67 @@ section h2 {
 .whatsapp:hover {
 
     transform: scale(1.1);
+/* SOBRE */
 
+.sobre-container{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+
+}
+
+
+.foto-perfil img{
+
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid #c8a24c;
+
+}
+
+
+.texto-sobre{
+
+max-width:600px;
+
+}
+
+
+
+/* MAPA */
+
+.mapa{
+
+height:350px;
+border:1px solid #c8a24c;
+border-radius:15px;
+margin-top:30px;
+
+}
+
+
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.sobre-container{
+
+flex-direction:column;
+
+}
+
+
+.foto-perfil img{
+
+width:220px;
+height:220px;
+
+}
+
+}
 }
