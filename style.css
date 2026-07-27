@@ -14,9 +14,12 @@ body {
 
     font-family: "Georgia", serif;
 
-    background: #111111;
 
-    color: #ffffff;
+    background: #2A1712;
+
+    color: #F5EFE6;
+
+
 
     line-height: 1.6;
 
@@ -46,9 +49,9 @@ header {
 
     padding: 25px 8%;
 
-    background: rgba(0,0,0,0.85);
+    background: rgba(42,23,18,0.95);
 
-    border-bottom: 1px solid #c8a24c;
+    border-bottom: 1px solid #C49A5A;
 
     z-index: 1000;
 
@@ -58,7 +61,7 @@ header {
 
 .logo {
 
-    color: #c8a24c;
+    color: #C49A5A;
 
     font-size: 26px;
 
@@ -86,7 +89,7 @@ nav a {
 
 nav a:hover {
 
-    color: #c8a24c;
+    color: #C49A5A;
 
 }
 
@@ -140,7 +143,7 @@ nav a:hover {
 
     font-size: 60px;
 
-    color: #c8a24c;
+    color: #C49A5A;
 
     margin-bottom: 20px;
 
@@ -181,7 +184,7 @@ nav a:hover {
 
     padding: 15px 35px;
 
-    background: #c8a24c;
+    background: #C49A5A;
 
     color: #111;
 
@@ -224,7 +227,7 @@ section {
 
 section h2 {
 
-    color: #c8a24c;
+    color: #C49A5A;
 
     font-size: 38px;
 
@@ -271,9 +274,14 @@ section p {
 
 .card {
 
-    background: #1b1b1b;
 
-    border: 1px solid #c8a24c;
+
+background: #351F17;
+
+border:1px solid #C49A5A;
+
+
+    border: 1px solid #C49A5A;
 
     padding: 35px;
 
@@ -299,7 +307,7 @@ section p {
 
 .card h3 {
 
-    color: #c8a24c;
+    color: #C49A5A;
 
     font-size: 25px;
 
@@ -330,13 +338,13 @@ section p {
 
 footer {
 
-    background: #000;
+    background: #1A0D09;
 
     text-align: center;
 
     padding: 25px;
 
-    border-top: 1px solid #c8a24c;
+    border-top: 1px solid #C49A5A;
 
     color: #aaa;
 
@@ -454,7 +462,7 @@ width:280px;
 height:280px;
 object-fit:cover;
 border-radius:50%;
-border:3px solid #c8a24c;
+border:3px solid #C49A5A;
 
 }
 
@@ -472,7 +480,7 @@ max-width:600px;
 .mapa{
 
 height:350px;
-border:1px solid #c8a24c;
+border:1px solid #C49A5A;
 border-radius:15px;
 margin-top:30px;
 
@@ -497,6 +505,108 @@ width:220px;
 height:220px;
 
 }
+
+}
+/* =========================
+   SOBRE MIM
+========================= */
+
+
+.sobre-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:60px;
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+
+.foto-perfil img{
+
+    width:280px;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:3px solid #C49A5A;
+
+    padding:5px;
+
+}
+
+
+
+.texto-sobre{
+
+    max-width:600px;
+
+    text-align:left;
+
+}
+
+
+
+.texto-sobre h3{
+
+    color:#C49A5A;
+
+    font-size:32px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.texto-sobre span{
+
+    color:#aaa;
+
+    display:block;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.texto-sobre p{
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+.sobre-container{
+
+    flex-direction:column;
+
+}
+
+
+.texto-sobre{
+
+    text-align:center;
+
+}
+
 
 }
 }
