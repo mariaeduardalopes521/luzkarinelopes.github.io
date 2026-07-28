@@ -1,72 +1,653 @@
+/* =======================================================
+   LUZ KARINE LOPES ADVOCACIA
+   SCRIPT.JS
+   INTERAÇÕES DO SITE
+======================================================= */
+
+
+
 // ===============================
-// ANIMAÇÃO DE ENTRADA DAS SEÇÕES
+// MENU MOBILE
 // ===============================
 
 
-const secoes = document.querySelectorAll("section");
+const menuMobile = document.getElementById("menu-mobile");
+
+const menu = document.getElementById("menu");
 
 
-function mostrarSecoes(){
 
-    const alturaTela = window.innerHeight;
-
-
-    secoes.forEach(secao => {
+if(menuMobile){
 
 
-        const distancia = secao.getBoundingClientRect().top;
+menuMobile.addEventListener("click",()=>{
 
 
-        if(distancia < alturaTela - 100){
-
-            secao.style.opacity = "1";
-
-            secao.style.transform = "translateY(0)";
-
-        }
+menu.classList.toggle("active");
 
 
-    });
+menuMobile.classList.toggle("active");
+
+
+});
 
 
 }
 
 
 
-secoes.forEach(secao => {
 
-    secao.style.opacity = "0";
 
-    secao.style.transform = "translateY(40px)";
 
-    secao.style.transition = "all 0.8s ease";
+// Fecha menu ao clicar em um link
+
+
+const linksMenu = document.querySelectorAll(".menu a");
+
+
+
+linksMenu.forEach(link=>{
+
+
+link.addEventListener("click",()=>{
+
+
+menu.classList.remove("active");
+
+
+menuMobile.classList.remove("active");
+
+
+});
+
 
 });
 
 
 
-window.addEventListener("scroll", mostrarSecoes);
 
 
-mostrarSecoes();
+
+// ===============================
+// HEADER AO ROLAR A PÁGINA
+// ===============================
+
+
+
+const header = document.getElementById("header");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY > 80){
+
+
+header.classList.add("scrolled");
+
+
+}else{
+
+
+header.classList.remove("scrolled");
+
+
+}
+
+
+});
+
+
 
 
 
 
 // ===============================
-// ANO AUTOMÁTICO NO RODAPÉ
+// ANIMAÇÕES AO APARECER
 // ===============================
+
+
+
+const elementosAnimados = document.querySelectorAll(
+".card, .area-card, .step, .depoimento-card, .sobre-box, .stat"
+);
+
+
+
+const observer = new IntersectionObserver(
+(entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+
+entry.target.classList.add("show");
+
+
+}
+
+
+});
+
+
+},
+{
+
+threshold:0.15
+
+}
+
+);
+
+
+
+
+
+elementosAnimados.forEach(elemento=>{
+
+
+elemento.classList.add("fade-up");
+
+
+observer.observe(elemento);
+
+
+});
+
+
+
+
+
+
+
+// ===============================
+// FAQ ACORDEÃO
+// ===============================
+
+
+
+const perguntas = document.querySelectorAll(".faq-question");
+
+
+
+perguntas.forEach(pergunta=>{
+
+
+pergunta.addEventListener("click",()=>{
+
+
+const item = pergunta.parentElement;
+
+
+
+item.classList.toggle("active");
+
+
+
+});
+
+
+
+});
+
+/* ===============================
+   CONTADORES ANIMADOS
+=============================== */
+
+
+
+const numeros = document.querySelectorAll(
+".stat strong"
+);
+
+
+
+const iniciarContador = (elemento)=>{
+
+
+const valorFinal = Number(
+elemento.getAttribute("data-number")
+);
+
+
+
+let atual = 0;
+
+
+
+const velocidade = Math.max(
+1,
+Math.floor(valorFinal / 80)
+);
+
+
+
+
+
+const contador = setInterval(()=>{
+
+
+atual += velocidade;
+
+
+
+if(atual >= valorFinal){
+
+
+elemento.textContent = valorFinal;
+
+
+clearInterval(contador);
+
+
+}else{
+
+
+elemento.textContent = atual;
+
+
+}
+
+
+
+},30);
+
+
+
+};
+
+
+
+
+
+
+const contadorObserver = new IntersectionObserver(
+(entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+
+
+iniciarContador(entry.target);
+
+
+
+contadorObserver.unobserve(entry.target);
+
+
+}
+
+
+
+});
+
+
+},
+{
+
+
+threshold:0.5
+
+
+}
+
+);
+
+
+
+
+
+numeros.forEach(numero=>{
+
+
+contadorObserver.observe(numero);
+
+
+});
+
+
+
+
+
+
+
+
+// ===============================
+// ROLAGEM SUAVE DOS LINKS
+// ===============================
+
+
+
+document.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(link=>{
+
+
+link.addEventListener(
+"click",
+function(e){
+
+
+
+const destino = document.querySelector(
+this.getAttribute("href")
+);
+
+
+
+if(destino){
+
+
+
+e.preventDefault();
+
+
+
+destino.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+
+}
+
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
+// ===============================
+// BOTÃO WHATSAPP
+// ===============================
+
+
+// Alterar depois pelo número real da Dra. Luz
+
+
+const whatsapp = document.querySelector(
+".whatsapp"
+);
+
+
+
+if(whatsapp){
+
+
+
+const numero = "5500000000000";
+
+
+
+whatsapp.href =
+`https://wa.me/${numero}`;
+
+
+
+}
+
+
+
+
+
+
+
+// ===============================
+// FORMULÁRIO
+// ===============================
+
+
+
+const formulario = document.querySelector(
+".contato-form form"
+);
+
+
+
+if(formulario){
+
+
+
+formulario.addEventListener(
+"submit",
+(e)=>{
+
+
+e.preventDefault();
+
+
+
+alert(
+"Mensagem enviada! Em breve entraremos em contato."
+);
+
+
+
+formulario.reset();
+
+
+
+});
+
+
+}
+
+/* ===============================
+   ANO AUTOMÁTICO NO RODAPÉ
+=============================== */
+
+
+
+const anoAtual = document.querySelector(
+".footer-bottom p"
+);
+
+
+
+if(anoAtual){
 
 
 const ano = new Date().getFullYear();
 
 
-const rodape = document.querySelector("footer p");
+anoAtual.innerHTML =
+anoAtual.innerHTML.replace(
+"2026",
+ano
+);
 
-
-if(rodape){
-
-    rodape.innerHTML =
-    `© ${ano} Luz Karine Lopes Advocacia - Todos os direitos reservados.`;
 
 }
+
+
+
+
+
+
+
+// ===============================
+// ANIMAÇÃO DE ENTRADA DO HERO
+// ===============================
+
+
+
+window.addEventListener(
+"load",
+()=>{
+
+
+const heroText =
+document.querySelector(".hero-text");
+
+
+const heroImage =
+document.querySelector(".hero-image");
+
+
+
+if(heroText){
+
+
+heroText.style.opacity="1";
+
+
+}
+
+
+
+if(heroImage){
+
+
+heroImage.style.opacity="1";
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+// ===============================
+// PROTEÇÃO DE IMAGENS
+// ===============================
+
+
+
+document.querySelectorAll("img")
+.forEach(img=>{
+
+
+img.addEventListener(
+"error",
+()=>{
+
+
+img.style.display="none";
+
+
+}
+
+);
+
+
+});
+
+
+
+
+
+
+
+// ===============================
+// VOLTAR AO TOPO
+// ===============================
+
+
+
+const criarBotaoTopo = ()=>{
+
+
+const botao = document.createElement("button");
+
+
+
+botao.innerHTML="↑";
+
+
+
+botao.className="topo";
+
+
+
+document.body.appendChild(botao);
+
+
+
+
+botao.addEventListener(
+"click",
+()=>{
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+});
+
+
+
+window.addEventListener(
+"scroll",
+()=>{
+
+
+if(window.scrollY > 500){
+
+
+botao.classList.add("mostrar");
+
+
+}else{
+
+
+botao.classList.remove("mostrar");
+
+
+}
+
+
+
+});
+
+
+};
+
+
+
+criarBotaoTopo();
+
+
+
+
+
+
+
+// ===============================
+// FINALIZAÇÃO
+// ===============================
+
+
+console.log(
+"Luz Karine Lopes Advocacia - Site carregado com sucesso."
+);
