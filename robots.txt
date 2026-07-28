@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mariaeduardalopes521.github.io/luzkarinelopes.github.io/sitemap.xml
