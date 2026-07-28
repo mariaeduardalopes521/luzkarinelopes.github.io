@@ -394,12 +394,12 @@ if(whatsapp){
 
 
 
-const numero = "5500000000000";
+const numero = "5563984742521";
 
 
 
 whatsapp.href =
-`https://wa.me/${numero}`;
+`https://wa.me/${numero}?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA.`;
 
 
 
