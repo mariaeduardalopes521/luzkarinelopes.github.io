@@ -5125,6 +5125,46 @@ height:28px;
     text-decoration: underline;
 }
 
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #b18a4a;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
+
+.contact-item {
+    background:#2d2119;
+    padding:30px;
+    margin-bottom:20px;
+    color:white;
+}
+
+.contact-item h3 {
+    color:#d6b477;
+}
+
+.contact-item a {
+    color:#d6b477;
+    text-decoration:none;
+}
+
+.contact-item a:hover {
+    text-decoration:underline;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item a {
+    display: inline-block;
+    margin-top: 15px;
+}
 
 /* =======================================================
    FIM DO STYLE.CSS
