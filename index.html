@@ -1331,7 +1331,7 @@ CEP: 77410-020
 <div class="contato-form">
 
 
-<form action="https://formspree.io/f/mzdnwvbo" method="POST"></form>
+<form action="https://formspree.io/f/mzdnwvbo" method="POST">
 
 
 <div class="form-group">
@@ -1342,10 +1342,11 @@ Nome
 </label>
 
 
-<input 
-type="text" 
+<input
+type="text"
+name="nome"
 placeholder="Digite seu nome"
-
+required
 >
 
 
@@ -1363,11 +1364,11 @@ Telefone
 </label>
 
 
-<input 
-type="tel" 
+<input
+type="tel"
+name="telefone"
 placeholder="(00) 00000-0000"
-
-
+required
 >
 
 
@@ -1385,10 +1386,11 @@ E-mail
 </label>
 
 
-<input 
-type="email" 
+<input
+type="email"
+name="email"
 placeholder="Digite seu e-mail"
-
+required
 >
 
 
@@ -1406,10 +1408,10 @@ Mensagem
 </label>
 
 
-<textarea 
+<textarea
+name="mensagem"
 placeholder="Como podemos ajudar?"
-
-
+required
 ></textarea>
 
 
