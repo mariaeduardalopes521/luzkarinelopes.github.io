@@ -5172,13 +5172,17 @@ height:28px;
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    flex-direction: row;
+    gap: 14px;
+    text-decoration: none;
 }
 
 .logo img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
     flex-shrink: 0;
 }
 
@@ -5190,11 +5194,14 @@ height:28px;
 
 .logo-text h2 {
     margin: 0;
+    font-size: 22px;
     line-height: 1.1;
 }
 
 .logo-text span {
-    margin-top: 3px;
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 3px;
 }
 
 /* =======================================================
