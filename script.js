@@ -417,36 +417,7 @@ whatsapp.href =
 
 
 
-const formulario = document.querySelector(
-".contato-form form"
-);
 
-
-
-if(formulario){
-
-
-
-formulario.addEventListener(
-"submit",
-(e)=>{
-
-
-e.preventDefault();
-
-
-
-alert(
-"Mensagem enviada! Em breve entraremos em contato."
-);
-
-
-
-formulario.reset();
-
-
-
-});
 
 
 }
