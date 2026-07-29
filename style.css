@@ -5166,6 +5166,30 @@ height:28px;
     margin-top: 15px;
 }
 
+
+/* LOGO DO CABEÇALHO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-text h2 {
+    margin: 0;
+}
+
+.logo-text span {
+    display: block;
+}
+
+
 /* =======================================================
    FIM DO STYLE.CSS
 ======================================================= */
