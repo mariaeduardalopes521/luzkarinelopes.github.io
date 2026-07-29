@@ -5172,23 +5172,30 @@ height:28px;
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .logo img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .logo-text h2 {
     margin: 0;
+    line-height: 1.1;
 }
 
 .logo-text span {
-    display: block;
+    margin-top: 3px;
 }
-
 
 /* =======================================================
    FIM DO STYLE.CSS
