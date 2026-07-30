@@ -5235,6 +5235,22 @@ height:58px;
     align-items:center !important;
 }
 
+.hero {
+    background:red !important;
+    height:900px !important;
+    min-height:900px !important;
+    display:block !important;
+}
+
+.hero {
+    min-height:750px !important;
+    height:auto !important;
+    background:#3a2a20 !important;
+}
+
+.hero::before {
+    display:none !important;
+}
 
 /* =======================================================
    FIM DO STYLE.CSS
