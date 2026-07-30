@@ -420,7 +420,7 @@ whatsapp.href =
 
 
 
-}
+
 
 /* ===============================
    ANO AUTOMÁTICO NO RODAPÉ
