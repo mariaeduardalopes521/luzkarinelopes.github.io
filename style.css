@@ -2948,7 +2948,8 @@ font-size:28px;
     padding-top:120px;
 
     color:#fff;
-
+  min-height:120vh !important;
+    padding:180px 0 140px !important;
 }
 
 
@@ -3060,9 +3061,8 @@ letter-spacing:3px;
 
     color:#fff;
 
-.hero {
-    background:red !important;
-}
+      min-height:120vh !important;
+    padding:180px 0 140px !important;
 
 }
 
@@ -5224,7 +5224,16 @@ height:58px;
 
 }
 
+.hero {
+    min-height:900px !important;
+    height:auto !important;
+    padding-bottom:150px !important;
+}
 
+.hero-content {
+    min-height:750px !important;
+    align-items:center !important;
+}
 
 
 /* =======================================================
