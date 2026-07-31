@@ -611,7 +611,92 @@ criarBotaoTopo();
 
 
 
+// ===============================
+// FORMULÁRIO PROFISSIONAL
+// ===============================
 
+const formulario = document.querySelector(".contato-form form");
+
+if(formulario){
+
+    formulario.addEventListener("submit", async function(e){
+
+        e.preventDefault();
+
+
+        const botao = formulario.querySelector("button");
+
+
+        const textoOriginal = botao.innerHTML;
+
+
+        botao.innerHTML = "Enviando...";
+        botao.disabled = true;
+
+
+
+        const dados = new FormData(formulario);
+
+
+
+        try{
+
+
+            const resposta = await fetch(
+                formulario.action,
+                {
+                    method:"POST",
+                    body:dados,
+                    headers:{
+                        "Accept":"application/json"
+                    }
+                }
+            );
+
+
+
+            if(resposta.ok){
+
+
+                formulario.reset();
+
+
+                alert(
+                "Mensagem enviada com sucesso! Em breve entraremos em contato."
+                );
+
+
+            }else{
+
+
+                alert(
+                "Não foi possível enviar sua mensagem. Tente novamente."
+                );
+
+
+            }
+
+
+
+        }catch(error){
+
+
+            alert(
+            "Erro de conexão. Verifique sua internet e tente novamente."
+            );
+
+
+        }
+
+
+
+        botao.innerHTML = textoOriginal;
+        botao.disabled = false;
+
+
+    });
+
+}
 
 
 // ===============================
